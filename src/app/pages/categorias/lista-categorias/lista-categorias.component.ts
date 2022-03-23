@@ -27,4 +27,22 @@ export class ListaCategoriasComponent implements OnInit {
     )
   }
 
+
+  deletarCategoria(id: number){
+    const deleteCate = confirm('deseja deletar a categoria')
+
+    if(deleteCate){
+      this.service.deletarCategoria(id).subscribe(
+        data=>{
+          alert('deletado com sucesso')
+          window.location.reload()
+        },
+        error=>{
+          console.log(error)
+          alert('erro ao deletar')
+        }
+      )
+    }
+  }
+
 }

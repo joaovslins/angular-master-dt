@@ -21,4 +21,20 @@ export class CategoriaService {
  getCategorias(): Observable<categorias[]>{
       return this.http.get<categorias[]>(this.apiPath)
  }
+
+ deletarCategoria(id: number){
+    return this.http.delete<categorias>(`${this.apiPath}/deletar?id=${id}`)
+ }
+
+ getCategoriaById(id: number){
+   return this.http.get<categorias>(`${this.http}/categoria?id=${id}`)
+ }
+
+ postCategory(categoria: categorias): Observable<categorias>{
+   return this.http.post<categorias>(this.apiPath, categoria)
+ }
+
+ putCategory(categoria: categorias): Observable<categorias>{
+   return this.http.put<categorias>(this.apiPath, categoria)
+ }
 }
