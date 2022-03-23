@@ -6,6 +6,9 @@ import { ListaCategoriasComponent } from './lista-categorias/lista-categorias.co
 import { FormCategoriasComponent } from './form-categorias/form-categorias.component';
 
 
+import { HttpClientModule } from '@angular/common/http';
+
+
 @NgModule({
   declarations: [
     ListaCategoriasComponent,
@@ -13,7 +16,8 @@ import { FormCategoriasComponent } from './form-categorias/form-categorias.compo
   ],
   imports: [
     CommonModule,
-    CategoriasRoutingModule
+    CategoriasRoutingModule,
+    HttpClientModule
   ]
 })
 export class CategoriasModule { }

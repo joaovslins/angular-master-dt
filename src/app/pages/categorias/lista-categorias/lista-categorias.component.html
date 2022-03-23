@@ -1,1 +1,44 @@
-<p>lista-categorias works!</p>
+<nav class="mb-5 ">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/">Home</a>
+        </li>
+        <li class="breadcrumb-item active">
+            Categorias
+        </li>
+    </ol>
+</nav>
+
+<div class="row mb-4">
+    <div class="col-md">
+        <h1 class="h2 border-left pl-2">
+                Categorias
+        </h1>
+    </div>
+    <div class="col-md">
+        <a routerLink="nova" class="btn btn-success float-end">+ Nova categoria</a>
+   </div>
+</div>
+
+<table class="table table-hover">
+    <thead>
+        <tr class="bg-primary text-light">
+            <th>Categorias</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr *ngFor="let categor of categori">
+            <td>
+                <strong>{{categor.nome}}</strong><br>
+                <small>{{categor.descricao}}</small>
+            </td>
+            <td>
+                <a [routerLink]="[12, 'editar']" class="btn btn-outline-primary btn-sm me-md-2">Editar</a>
+                <a  class="btn btn-outline-danger btn-sm">Excluir</a>
+            </td>
+        </tr>
+
+    </tbody>
+</table>
